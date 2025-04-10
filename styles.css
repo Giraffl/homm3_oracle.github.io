@@ -241,7 +241,7 @@ footer {
     margin-top: 3rem;
     padding: 1.5rem 0;
     color: var(--text-secondary);
-    border-top: 1px solid var(--card-border);
+    border-top: 2px solid var(--accent-color);
     font-size: 0.9rem;
 }
 
