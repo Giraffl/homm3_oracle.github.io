@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes of Might and Magic III - Oracle Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+<body class="dark-theme">
+    <div class="theme-toggle">
+        <i class="fas fa-sun"></i>
+        <label class="switch">
+            <input type="checkbox" id="theme-switch" checked>
+            <span class="slider round"></span>
+        </label>
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Heroes of Might and Magic III</h1>
+            <h2>Стек Python (бэкенд), Oracle (база данных/логика игры), HTML/CSS/JS (фронт).</h2>
+        </header>
+
+        <main>
+            <div class="version-container">
+                <div class="version-card">
+                    <h3>1. Версия 0.1</h3>
+                    <p class="url">URL: <a href="https://rutube.ru/video/private/87822d2f7dc2d0171838dbd431c3402f/?p=cYLqyHge2mrijeMp8_BuMA">Rutube</a></p>
+                    <div class="description-toggle">
+                        <button class="toggle-btn active">Описание <i class="fas fa-chevron-up"></i></button>
+                        <div class="description-content active">
+                            <p>Версия 0.1 представляет собой начальный этап разработки. В этой версии реализованы базовые механики игры и основная структура проекта. GUI представлен в командной строке.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="version-card">
+                    <h3>2. Версия 0.2</h3>
+                    <p class="url">URL: <a href="https://rutube.ru/video/private/499ce46ad0bdb4dc61a182d41b52f936/?p=IneaUG_1NhzEC-ydJUBg7Q">Rutube</a></p>
+                    <div class="description-toggle">
+                        <button class="toggle-btn active">Описание <i class="fas fa-chevron-up"></i></button>
+                        <div class="description-content active">
+                            <p>Версия 0.2 включает в себя улучшения в интерфейсе пользователя, карты, а также исправления обнаруженных ошибок в версии 0.1. GUI представлен в виде веб-сайта.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="version-card">
+                    <h3>3. Версия 0.3</h3>
+                    <p class="url">URL: <a href="https://rutube.ru/video/private/b48cc760a40b0c4bb6b06c7518022f7c/?p=kiFfu-QFdYZk8tGmDfc0Xw">Rutube</a></p>
+                    <div class="description-toggle">
+                        <button class="toggle-btn active">Описание <i class="fas fa-chevron-up"></i></button>
+                        <div class="description-content active">
+                            <p>Версия 0.3 включает в себя наличие счетчика ходов, реализованы дни. Каждый день предоставляет игроку использовать 20 шагов. При ходьбе по траве, лесу, мосту отнимается 0.5 шага, при ходьбе по пустыне: 1 шаг.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Проект размещен на <a href="https://github.com/Giraffl/homm3_oracle.github.io" style="text-decoration: none; color: var(--accent-color); text-shadow: 0 0 10px rgba(123, 104, 238, 0.6);">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
