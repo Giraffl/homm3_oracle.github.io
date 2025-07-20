@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes of Might and Magic III - Игра</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Проверка авторизации
+        document.addEventListener('DOMContentLoaded', () => {
+            const userId = localStorage.getItem('userId');
+            const username = localStorage.getItem('username');
+
+            if (!userId || !username) {
+                // Если пользователь не авторизован, перенаправляем на страницу входа
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="player-info">
+                <span id="playerName" class="player-name"></span>
+                <button id="logoutBtn" class="logout-btn">Выйти</button>
+            </div>
+        </div>
+        <div class="game-map" id="gameMap"></div>
+    </div>
+    <!-- Кнопка для найма армии в окне замка -->
+    <button id="hireArmyBtn" style="display:none">Нанять армию</button>
+
+    <!-- Модальное окно найма армии -->
+    <div id="hireArmyModal" class="modal" style="display:none">
+        <div class="modal-content">
+            <span class="close" id="closeHireArmyModal">&times;</span>
+            <h2>Найм армии</h2>
+            <div id="unitTypesList"></div>
+            <div id="unitTypeDetails" style="margin-top:10px;"></div>
+            <label>Количество: <input type="number" id="hireArmyCount" min="1" value="1"></label>
+            <button id="confirmHireArmyBtn">Нанять</button>
+            <div id="hireArmyMessage" style="color:red;margin-top:10px;"></div>
+        </div>
+    </div>
+    <!-- Добавляем музыку для игры -->
+    <audio id="gameMusic" src="music/grass_game.ogg" autoplay loop></audio>
+    <script>
+        function playGameMusic(type) {
+            const audio = document.getElementById('gameMusic');
+            let src = 'music/grass_game.ogg';
+            if (type === 'castle') src = 'music/castle_game.ogg';
+            if (type === 'tower') src = 'music/tower_game.ogg';
+            if (audio.src.endsWith(src)) return;
+            audio.src = src;
+            audio.volume = 0.5;
+            audio.play();
+        }
+    </script>
+    <script src="game.js"></script>
+</body>
+
+</html>

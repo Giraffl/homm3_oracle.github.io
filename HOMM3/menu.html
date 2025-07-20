@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes of Might and Magic III - Меню</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Проверка авторизации
+        document.addEventListener('DOMContentLoaded', () => {
+            const userId = localStorage.getItem('userId');
+            const username = localStorage.getItem('username');
+            
+            if (!userId || !username) {
+                // Если пользователь не авторизован, перенаправляем на страницу входа
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu-container">
+            <h1 class="menu-title">Heroes of Might and Magic III</h1>
+            
+            <div class="menu-user-info">
+                <span id="menuPlayerName" class="player-name"></span>
+            </div>
+            
+            <div class="menu-buttons">
+                <button id="tutorialBtn" class="menu-btn">Пройти знакомство с игрой</button>
+                <button id="logoutBtn" class="menu-btn">Выйти из аккаунта</button>
+            </div>
+        </div>
+    </div>
+    <!-- Добавляем музыку главного меню -->
+    <audio id="mainMenuMusic" src="music/main_menu.ogg" autoplay loop></audio>
+    <script>
+        // Автоматически запускаем музыку, если пользователь не отключил звук
+        const audio = document.getElementById('mainMenuMusic');
+        audio.volume = 0.5;
+        // Скрываем стандартные контролы
+        audio.controls = false;
+        // Если пользователь возвращается на страницу, не перезапускать музыку
+        if (window.sessionStorage) {
+            if (!sessionStorage.getItem('mainMenuMusicPlayed')) {
+                audio.play();
+                sessionStorage.setItem('mainMenuMusicPlayed', '1');
+            }
+        }
+    </script>
+    <script src="menu.js"></script>
+</body>
+
+</html> 
